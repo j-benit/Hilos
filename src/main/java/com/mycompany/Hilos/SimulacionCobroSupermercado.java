@@ -50,7 +50,9 @@ public class SimulacionCobroSupermercado {
                 Cajera cajera = new Cajera(nombreCajera, cliente);
                 cajeras.add(cajera);
             }
-
+            
+              //se inician los hilos
+            
             for (Cajera cajera : cajeras) {
                 Thread hiloCajera = new Thread(cajera);
                 hiloCajera.start();
@@ -63,12 +65,12 @@ public class SimulacionCobroSupermercado {
             for (Cajera cajera : cajeras) {
                 cajera.join();
             }
-
+      
             double tiempoTotal = 0;
             for (Cajera cajera : cajeras) {
                 tiempoTotal += cajera.getTiempoTotal();
             }
-
+      // se imprime el tiempo total de las compras
             System.out.println("Tiempo total de todas las compras: " + tiempoTotal + " milisegundos");
         }
     }

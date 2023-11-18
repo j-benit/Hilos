@@ -19,7 +19,7 @@ class Cliente {
         this.nombre = nombre;
         this.productos = productos;
     }
-
+// este sera el metodo que claculara el precio de los productos 
     public void totalPrecio() {
         double total = 0;
         for (Producto producto : productos) {
